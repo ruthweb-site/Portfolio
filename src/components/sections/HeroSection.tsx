@@ -128,30 +128,6 @@ export const HeroSection: React.FC = () => {
 
           {/* Interactive R3F Cyber Sphere Canvas */}
           <InteractiveCyberSphere />
-
-          {/* Floating High-Tech Portrait Card over 3D Canvas */}
-          <div className="absolute bottom-6 right-6 z-20 flex items-center gap-3.5 p-3 rounded-2xl glass-card border border-white/15 shadow-2xl">
-            <div className="relative w-14 h-14 rounded-xl overflow-hidden border border-cyan/50 shrink-0">
-              <Image
-                src={identity.photoUrl}
-                alt={identity.name}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-white leading-tight">
-                {identity.name}
-              </div>
-              <div className="text-[10px] font-mono text-emerald">
-                B.Sc. CS // 9.77 CGPA
-              </div>
-              <div className="text-[9px] font-mono text-zinc-400">
-                KC College Mumbai
-              </div>
-            </div>
-          </div>
         </motion.div>
       </div>
 
