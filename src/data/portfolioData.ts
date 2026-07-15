@@ -68,7 +68,7 @@ export const PORTFOLIO_DATA = {
       "Enthusiastic and self-motivated B.Sc. Computer Science student at KC College Mumbai. Highly skilled engineer specializing in Linux administration, AWS cloud engineering, Docker & Kubernetes orchestration, automated Jenkins CI/CD pipelines, and high-performance infrastructure.",
     status: "",
     photoUrl: "/ruthran-professional.png",
-    email: "ruthran.arulmani@gmail.com",
+    email: "ruthran.arul1803@gmail.com",
     metrics: [
       { value: "Best Paper", label: "IRISD 2026 Int. Conference" },
       { value: "120+ Hrs", label: "NSS Leadership & Social Impact" },
