@@ -124,7 +124,7 @@ export const ContactSection: React.FC = () => {
               <span className="text-xs font-mono text-zinc-400">CONNECT ON PLATFORMS</span>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com/ruthran"
+                  href="https://github.com/ruthweb-site"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-zinc-300 hover:text-white transition-all flex items-center gap-1.5 text-xs font-mono"
@@ -135,7 +135,7 @@ export const ContactSection: React.FC = () => {
                   <span className="hidden sm:inline">GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/ruthran-arulmani"
+                  href="https://www.linkedin.com/in/ruthran1803/"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-zinc-300 hover:text-white transition-all flex items-center gap-1.5 text-xs font-mono"
