@@ -79,13 +79,13 @@ export const PORTFOLIO_DATA = {
 
   achievements: [
     {
-      id: "aws-cloud-infrastructure",
-      award: "Certified Cloud & DevOps Infrastructure Architect",
-      organization: "Cloud Engineering & Kubernetes Deployment Track",
-      year: "2025 — 2026",
-      highlight: "High-Availability CI/CD & Linux Administration",
+      id: "nvidia-nemotron-award",
+      award: "2nd Place Winner — NVIDIA Nemotron Contest 2026",
+      organization: "NVIDIA Nemotron and Deep Tech Stars",
+      year: "2026",
+      highlight: "CivicShield AI // National AI Innovation",
       description:
-        "Architected automated CI/CD deployment pipelines using Jenkins, Docker containerization, and AWS ECS/EKS clusters with zero-downtime rolling updates and CloudWatch telemetry monitoring.",
+        "Secured 2nd Place in the NVIDIA Nemotron Contest 2026 for developing CivicShield AI, an AI-powered platform for detecting fake government documents and online scams.",
       badgeType: "gold",
     },
     {
@@ -97,16 +97,6 @@ export const PORTFOLIO_DATA = {
       description:
         "Awarded the Best Content Prize for presenting an original research paper at the International Conference on Interdisciplinary Research Innovation and Sustainable Development (IRISD 2026) in Mumbai.",
       badgeType: "cyan",
-    },
-    {
-      id: "kubernetes-orchestration",
-      award: "Advanced Container Orchestration & Security",
-      organization: "Linux Foundation & Cloud Native Infrastructure",
-      year: "2025",
-      highlight: "Multi-Cluster K8s & Infrastructure as Code",
-      description:
-        "Engineered scalable multi-node Kubernetes clusters, implementing Terraform Infrastructure as Code (IaC), Prometheus/Grafana observability stacks, and enterprise Linux security hardening.",
-      badgeType: "purple",
     },
   ] as AchievementItem[],
 
@@ -417,7 +407,7 @@ glueContext.write_dynamic_frame.from_options(
   career: [
     {
       period: "2024 — 2025",
-      role: "Core Member & Head of Marketing / Admin",
+      role: "Core Member & Marketing / Admin",
       company: "FEISTRON TECH FEST // KC COLLEGE",
       location: "Mumbai, Maharashtra",
       description:
