@@ -70,8 +70,6 @@ export const PORTFOLIO_DATA = {
     photoUrl: "/ruthran-professional.png",
     email: "ruthran.arulmani@gmail.com",
     metrics: [
-      { value: "99.99%", label: "Cloud Pipeline Uptime" },
-      { value: "50,000+", label: "Pod Replicas Orchestrated" },
       { value: "Best Paper", label: "IRISD 2026 Int. Conference" },
       { value: "120+ Hrs", label: "NSS Leadership & Social Impact" },
     ],
