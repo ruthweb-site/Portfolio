@@ -21,17 +21,19 @@ export const HeroSection: React.FC = () => {
         {/* Left Column: High Impact Typography & Identity */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           {/* Live Winner Status Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-gold/40 mb-6 group cursor-default"
-          >
-            <Trophy className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-gold font-bold">
-              {identity.status}
-            </span>
-          </motion.div>
+          {identity.status ? (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-gold/40 mb-6 group cursor-default"
+            >
+              <Trophy className="w-3.5 h-3.5 text-gold" />
+              <span className="text-[11px] font-mono tracking-widest uppercase text-gold font-bold">
+                {identity.status}
+              </span>
+            </motion.div>
+          ) : null}
 
           {/* Name & Role Designation */}
           <motion.div

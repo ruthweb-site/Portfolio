@@ -66,7 +66,7 @@ export const PORTFOLIO_DATA = {
     tagline: "Architecting Next-Gen AI & Resilient Cloud Infrastructure",
     subheadline:
       "Enthusiastic and self-motivated B.Sc. Computer Science student  at KC College Mumbai. Award-winning engineer specializing in Agentic AI, RAG, Linux environments, Docker/Kubernetes containerization, and AWS cloud pipelines.",
-    status: "2ND PLACE WINNER — NVIDIA NEMOTRON CONTEST 2026",
+    status: "",
     photoUrl: "/ruthran-professional.png",
     email: "ruthran.arulmani@gmail.com",
     metrics: [

@@ -59,15 +59,11 @@ export const AboutSection: React.FC = () => {
             <span>KC College Mumbai, Maharashtra</span>
           </p>
 
-          {/* CGPA & NVIDIA Badge Pills */}
-          <div className="grid grid-cols-2 gap-3 w-full mt-6 pt-6 border-t border-white/10">
+          {/* CGPA Badge Pill */}
+          <div className="grid grid-cols-1 gap-3 w-full mt-6 pt-6 border-t border-white/10">
             <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10">
               <div className="text-xl font-mono font-bold text-white">9.77 / 10</div>
               <div className="text-[10px] font-mono text-zinc-400">KC COLLEGE CGPA</div>
-            </div>
-            <div className="p-3 rounded-2xl bg-gold/10 border border-gold/30">
-              <div className="text-xl font-mono font-bold text-gold">2nd Place</div>
-              <div className="text-[10px] font-mono text-zinc-300">NVIDIA NEMOTRON &apos;26</div>
             </div>
           </div>
         </motion.div>
