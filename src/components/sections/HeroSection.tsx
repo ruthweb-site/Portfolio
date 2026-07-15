@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, Trophy, Mail } from "lucide-react";
+import { ArrowUpRight, Trophy, Mail } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { InteractiveCyberSphere } from "@/components/canvas/InteractiveCyberSphere";
 
