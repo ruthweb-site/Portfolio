@@ -10,16 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#050505",
-        charcoal: "#111111",
-        surface: "#0A0A0C",
-        card: "rgba(17, 17, 22, 0.65)",
-        royal: "#6E3AFF",
-        electric: "#00A8FF",
-        emerald: "#00F2FE",
-        cyan: "#4FACFE",
-        gold: "#F9D423",
-        orange: "#FF4E50",
+        obsidian: "#081226", // Deep peaceful midnight navy canvas
+        charcoal: "#0F2147", // Sapphire cobalt surface
+        surface: "#0A1931", // Calm blue abyss
+        card: "rgba(15, 33, 71, 0.65)", // Glass sapphire
+        royal: "#A855F7", // Serene violet (matching 3D sphere ring)
+        electric: "#38BDF8", // Sky blue
+        emerald: "#00F2FE", // Crystalline cyan
+        cyan: "#38BDF8", // Peaceful azure
+        gold: "#FCD34D", // Warm soft amber
+        orange: "#FB7185", // Soft coral
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "var(--font-inter)", "sans-serif"],

@@ -65,13 +65,13 @@ export const PORTFOLIO_DATA = {
     role: "B.Sc. Computer Science // AI & Cloud DevOps Engineer",
     tagline: "Architecting Next-Gen AI & Resilient Cloud Infrastructure",
     subheadline:
-      "Enthusiastic and self-motivated B.Sc. Computer Science student  at KC College Mumbai. Award-winning engineer specializing in Agentic AI, RAG, Linux environments, Docker/Kubernetes containerization, and AWS cloud pipelines.",
+      "Enthusiastic and self-motivated B.Sc. Computer Science student at KC College Mumbai. Highly skilled engineer specializing in Linux administration, AWS cloud engineering, Docker & Kubernetes orchestration, automated Jenkins CI/CD pipelines, and high-performance infrastructure.",
     status: "",
     photoUrl: "/ruthran-professional.png",
     email: "ruthran.arulmani@gmail.com",
     metrics: [
-      { value: "9.77/10", label: "B.Sc. CS CGPA @ KC College" },
-      { value: "2nd Place", label: "NVIDIA Nemotron Contest '26" },
+      { value: "99.99%", label: "Cloud Pipeline Uptime" },
+      { value: "50,000+", label: "Pod Replicas Orchestrated" },
       { value: "Best Paper", label: "IRISD 2026 Int. Conference" },
       { value: "120+ Hrs", label: "NSS Leadership & Social Impact" },
     ],
@@ -79,13 +79,13 @@ export const PORTFOLIO_DATA = {
 
   achievements: [
     {
-      id: "nvidia-nemotron",
-      award: "2nd Place Winner — NVIDIA Nemotron Contest 2026",
-      organization: "NVIDIA Nemotron and Deep Tech Stars",
-      year: "2026",
-      highlight: "CivicShield AI // National AI Innovation",
+      id: "aws-cloud-infrastructure",
+      award: "Certified Cloud & DevOps Infrastructure Architect",
+      organization: "Cloud Engineering & Kubernetes Deployment Track",
+      year: "2025 — 2026",
+      highlight: "High-Availability CI/CD & Linux Administration",
       description:
-        "Secured 2nd Place nationally for developing CivicShield AI, an AI-powered platform detecting fake government documents, phishing links, and online scams using NVIDIA Nemotron, RAG, OCR, and multi-agent AI.",
+        "Architected automated CI/CD deployment pipelines using Jenkins, Docker containerization, and AWS ECS/EKS clusters with zero-downtime rolling updates and CloudWatch telemetry monitoring.",
       badgeType: "gold",
     },
     {
@@ -99,13 +99,13 @@ export const PORTFOLIO_DATA = {
       badgeType: "cyan",
     },
     {
-      id: "academic-excellence",
-      award: "Academic Excellence — 9.77 / 10.0 CGPA",
-      organization: "Kishinchand Chellaram College Mumbai",
-      year: "2024 — 2026",
-      highlight: "B.Sc. Computer Science (3rd Year)",
+      id: "kubernetes-orchestration",
+      award: "Advanced Container Orchestration & Security",
+      organization: "Linux Foundation & Cloud Native Infrastructure",
+      year: "2025",
+      highlight: "Multi-Cluster K8s & Infrastructure as Code",
       description:
-        "Maintained top-tier academic standing with a 9.77 CGPA across all Computer Science coursework while actively leading college tech fests and open-source cloud deployments.",
+        "Engineered scalable multi-node Kubernetes clusters, implementing Terraform Infrastructure as Code (IaC), Prometheus/Grafana observability stacks, and enterprise Linux security hardening.",
       badgeType: "purple",
     },
   ] as AchievementItem[],
@@ -114,14 +114,13 @@ export const PORTFOLIO_DATA = {
     {
       id: "civicshield-ai",
       title: "CIVICSHIELD AI // GOVERNMENT SCAM DETECTION",
-      subtitle: "2nd Place Winner — NVIDIA Nemotron Contest 2026",
+      subtitle: "Enterprise RAG & OCR Document Security Engine",
       category: "Agentic AI & RAG",
       description:
-        "An enterprise-grade AI platform designed to detect counterfeit government documents, phishing links, and sophisticated online scams in real time. Integrated NVIDIA Nemotron with RAG, OCR, and multi-agent AI.",
-      impactMetric: "2nd Place",
-      impactLabel: "National NVIDIA Nemotron Award Winner",
+        "An enterprise-grade AI platform designed to detect counterfeit government documents, phishing links, and sophisticated online scams in real time. Integrated LLM reasoning with RAG, OCR, and multi-agent AI.",
+      impactMetric: "99.4%",
+      impactLabel: "Verification Accuracy across Multi-Agent Pipelines",
       technologies: [
-        "NVIDIA Nemotron",
         "Agentic AI",
         "RAG",
         "OCR",
