@@ -6,46 +6,43 @@ import { Float, Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 interface CyberPointsProps {
+  count?: number;
   mouseRef: React.MutableRefObject<{ x: number; y: number }>;
 }
 
-const CyberPoints: React.FC<CyberPointsProps> = ({ mouseRef }) => {
-  const masterGroupRef = useRef<THREE.Group>(null!);
-  const sphereRef = useRef<THREE.Points>(null!);
-  const torusRef = useRef<THREE.Points>(null!);
+const CyberPoints: React.FC<CyberPointsProps> = ({ count = 3600, mouseRef }) => {
+  const pointsRef = useRef<THREE.Points>(null!);
+  const ringRef = useRef<THREE.Points>(null!);
 
-  // 1. Full, Complete Sphere (Fibonacci lattice) - White / Light Cyan dots forming a solid, crisp circular globe
+  // Generate spherical fibonacci / quantum particle coordinates
   const spherePositions = useMemo(() => {
-    const count = 6000;
     const positions = new Float32Array(count * 3);
-    const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle
-    const radius = 2.65;
+    const radius = 2.4;
 
     for (let i = 0; i < count; i++) {
-      const y = 1 - (i / (count - 1)) * 2;
-      const radiusAtY = Math.sqrt(1 - y * y);
-      const theta = phi * i;
+      const phi = Math.acos(-1 + (2 * i) / count);
+      const theta = Math.sqrt(count * Math.PI) * phi;
 
-      positions[i * 3] = Math.cos(theta) * radiusAtY * radius;
-      positions[i * 3 + 1] = y * radius;
-      positions[i * 3 + 2] = Math.sin(theta) * radiusAtY * radius;
+      positions[i * 3] = radius * Math.cos(theta) * Math.sin(phi);
+      positions[i * 3 + 1] = radius * Math.sin(theta) * Math.sin(phi);
+      positions[i * 3 + 2] = radius * Math.cos(phi);
     }
     return positions;
-  }, []);
+  }, [count]);
 
-  // 2. Tilted Diagonal Torus Ring - Purple / Violet dots arcing across the top-right and bottom-left exactly like reference
-  const torusPositions = useMemo(() => {
-    const ringCount = 3500;
+  // Generate orbital torus ring
+  const ringPositions = useMemo(() => {
+    const ringCount = 1800;
     const positions = new Float32Array(ringCount * 3);
-    const majorRadius = 3.3;
-    const minorRadius = 0.52;
+    const majorRadius = 3.6;
+    const minorRadius = 0.25;
 
     for (let i = 0; i < ringCount; i++) {
-      const u = (i / ringCount) * Math.PI * 2; // Around the major ring
-      const v = ((i * 17) % ringCount) * 0.04 * Math.PI * 2; // Around the minor tube
+      const u = (i / ringCount) * Math.PI * 2;
+      const v = ((i * 13) % ringCount) * 0.05 * Math.PI * 2;
 
       positions[i * 3] = (majorRadius + minorRadius * Math.cos(v)) * Math.cos(u);
-      positions[i * 3 + 1] = (majorRadius + minorRadius * Math.cos(v)) * Math.sin(u) * 0.45;
+      positions[i * 3 + 1] = (majorRadius + minorRadius * Math.cos(v)) * Math.sin(u) * 0.35;
       positions[i * 3 + 2] = minorRadius * Math.sin(v);
     }
     return positions;
@@ -54,54 +51,51 @@ const CyberPoints: React.FC<CyberPointsProps> = ({ mouseRef }) => {
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime();
 
-    // Rotate sphere smoothly on its vertical axis
-    if (sphereRef.current) {
-      sphereRef.current.rotation.y += delta * 0.15;
+    if (pointsRef.current) {
+      // Gentle autonomous rotation
+      pointsRef.current.rotation.y += delta * 0.12;
+      pointsRef.current.rotation.x = Math.sin(time * 0.2) * 0.15;
+
+      // Magnetic tilt towards mouse coordinates
+      const targetRotationX = mouseRef.current.y * 0.45;
+      const targetRotationY = mouseRef.current.x * 0.45;
+
+      pointsRef.current.rotation.x += (targetRotationX - pointsRef.current.rotation.x) * 0.05;
+      pointsRef.current.rotation.z += (targetRotationY - pointsRef.current.rotation.z) * 0.05;
     }
 
-    // Rotate purple torus ring along its orbital path while keeping its diagonal tilt stable
-    if (torusRef.current) {
-      torusRef.current.rotation.z -= delta * 0.25;
-      torusRef.current.rotation.x = Math.PI / 3 + Math.sin(time * 0.25) * 0.08;
-      torusRef.current.rotation.y = Math.PI / 6;
-    }
-
-    // Smooth unified mouse tilt on the master group so the sphere and purple ring tilt together smoothly without breaking the circle
-    if (masterGroupRef.current) {
-      const targetX = mouseRef.current.y * 0.4;
-      const targetY = mouseRef.current.x * 0.4;
-
-      masterGroupRef.current.rotation.x += (targetX - masterGroupRef.current.rotation.x) * 0.08;
-      masterGroupRef.current.rotation.z += (targetY - masterGroupRef.current.rotation.z) * 0.08;
+    if (ringRef.current) {
+      ringRef.current.rotation.z -= delta * 0.2;
+      ringRef.current.rotation.x = Math.PI / 3 + Math.sin(time * 0.3) * 0.1;
     }
   });
 
   return (
-    <group ref={masterGroupRef}>
-      {/* Core Full Circle Sphere (Bright White & Light Cyan) */}
-      <Float speed={1.4} rotationIntensity={0.15} floatIntensity={0.3}>
-        <Points ref={sphereRef} positions={spherePositions} stride={3}>
+    <group>
+      {/* Central Cybernetic Particle Sphere */}
+      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.4}>
+        <Points ref={pointsRef} positions={spherePositions} stride={3}>
           <PointMaterial
             transparent
-            color="#E0F2FE"
-            size={0.042}
+            color="#00F2FE"
+            size={0.032}
             sizeAttenuation={true}
             depthWrite={false}
-            opacity={0.95}
+            opacity={0.85}
             blending={THREE.AdditiveBlending}
           />
         </Points>
       </Float>
 
-      {/* Tilted Purple/Violet Torus Ring (Exactly matching reference image) */}
-      <Points ref={torusRef} positions={torusPositions} stride={3}>
+      {/* Outer Orbital Torus Ring */}
+      <Points ref={ringRef} positions={ringPositions} stride={3}>
         <PointMaterial
           transparent
-          color="#C084FC"
-          size={0.038}
+          color="#6E3AFF"
+          size={0.024}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.88}
+          opacity={0.65}
           blending={THREE.AdditiveBlending}
         />
       </Points>
@@ -125,13 +119,13 @@ export const InteractiveCyberSphere: React.FC = () => {
       className="w-full h-full min-h-[480px] sm:min-h-[640px] flex items-center justify-center relative select-none"
     >
       <Canvas
-        camera={{ position: [0, 0, 7.5], fov: 50 }}
+        camera={{ position: [0, 0, 7.2], fov: 50 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
-        <ambientLight intensity={0.9} />
-        <pointLight position={[10, 10, 10]} intensity={2.0} color="#E0F2FE" />
-        <pointLight position={[-10, -10, -10]} intensity={1.8} color="#C084FC" />
+        <ambientLight intensity={0.6} />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#00A8FF" />
+        <pointLight position={[-10, -10, -10]} intensity={1.2} color="#6E3AFF" />
 
         <CyberPoints mouseRef={mouseRef} />
       </Canvas>
